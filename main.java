@@ -19,26 +19,39 @@ public class main {
 		                .build();
 		        HttpResponse<String> response = client.send(request,
 		                HttpResponse.BodyHandlers.ofString());
-		        System.out.println(response.body());
+//		        System.out.println(response.body());
 		        Gson gson = new Gson();
-		        API api=new API();
-//		        api.setId(0);
-		        api.setWeb_pages("http://www.marywood.edu");
-		        api.setState_province( null);
-		        api.setAlpha_two_code("US");
-		        api.setName("Marywood University");
+//		        API api=new API();
+////		        api.setId(0);
+//		        api.setWeb_pages("http://www.marywood.edu");
+//		        api.setState_province( null);
+//		        api.setAlpha_two_code("US");
+//		        api.setName("Marywood University");
 		      
 		     // Generating json from emp object
-		        String apiJson = gson.toJson(api);
-		        System.out.println("API json is " + apiJson);
+//		        String apiJson = gson.toJson(api);
+		        API[] names = gson.fromJson(response.body(), API[].class);
 		        
-		     // Generating emp object from emp json
-		        API apiGenerated = gson.fromJson(
-		            gson.toJson(api), API.class);
 		        
-		     // Print and display the employee been generated
-		        System.out.println(
-		            "Generated API from json is "
-		            + apiGenerated);
-		    }
+		        
+		        
+		        
+		        
+		        
+		        
+		        
+		        
+		        
+//		        
+//		        System.out.println("API json is " + apiJson);
+//		        
+//		     // Generating emp object from emp json
+//		        API apiGenerated = gson.fromJson(
+//		            gson.toJson(api), API.class);
+//		        
+//		     // Print and display the employee been generated
+//		        System.out.println(
+//		            "Generated API from json is "
+//		            + apiGenerated);
+//		    }
 }
